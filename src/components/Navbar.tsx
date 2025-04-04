@@ -1,14 +1,14 @@
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
-import icon from '../assets/icon.png';
-import aligneyeLogo from '../assets/aligneyeFinalLogo.png';
-import { useState } from 'react';
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
+import icon from "../assets/icon.png";
+import aligneyeLogo from "../assets/aligneyeFinalLogo.png";
+import { useState } from "react";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [hovered, setHovered] = useState(null); // To track hovered button
   const [showComingSoon, setShowComingSoon] = useState(false); // To track the visibility of the "Coming Soon" message
-// @ts-ignore
+  // @ts-ignore
   const handleMouseEnter = (button) => {
     setHovered(button);
   };
@@ -71,19 +71,19 @@ export default function Navbar() {
               </a>
             </div> */}
           </div>
-          
+
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun className="w-5 h-5 text-teal-500" />
               ) : (
                 <Moon className="w-5 h-5 text-teal-700" />
               )}
             </button>
-            
+
             {/* <button
               className="btn-secondary relative cursor-pointer"
               onMouseEnter={() => setShowComingSoon(true)}
