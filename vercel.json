@@ -1,12 +1,7 @@
 {
     "redirects": [
       {
-        "source": "http://aligneye.com",
-        "destination": "https://www.aligneye.com",
-        "permanent": true
-      },
-      {
-        "source": "https://aligneye.com",
+        "source": "/",
         "destination": "https://www.aligneye.com",
         "permanent": true
       }
