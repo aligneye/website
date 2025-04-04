@@ -50,7 +50,7 @@ export default function ProductSlider() {
           >
             {products.map((product) => (
               <div key={product.id} className="w-full flex-shrink-0 flex pb-9 justify-center items-center">
-                <div className="bg-white/90 dark:bg-gray-800/50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-xl border border-gray-100 dark:border-gray-700 flex items-center justify-center w-[500px] max-w-full h-auto">
+                <div className="bg-white/90 dark:bg-gray-800/50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-xl border border-gray-100 dark:border-gray-700 flex items-center justify-center w-[400px] md:w-[500px] max-w-full h-auto">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -62,14 +62,14 @@ export default function ProductSlider() {
           </div>
 
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800/50 text-white p-4 rounded-full shadow-md hover:bg-gray-900/80 transition duration-300"
+            className="absolute left-4 md:block hidden top-1/2 transform -translate-y-1/2 bg-gray-800/50 text-white p-4 rounded-full shadow-md hover:bg-gray-900/80 transition duration-300"
             onClick={prevSlide}
           >
             ❮
           </button>
 
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800/50 text-white p-4 rounded-full shadow-md hover:bg-gray-900/80 transition duration-300"
+            className="absolute right-4 md:block hidden  top-1/2 transform -translate-y-1/2 bg-gray-800/50 text-white p-4 rounded-full shadow-md hover:bg-gray-900/80 transition duration-300"
             onClick={nextSlide}
           >
             ❯
