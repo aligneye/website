@@ -9,9 +9,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-teal-700 dark:text-teal-400 mb-4">AlignEye</h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-md">
-     
-              AlignEye Vision Private Limited is a pioneering technology company specializing in motion tracking and eye tracking solutions. We leverage cutting-edge sensor technology and intelligent algorithms to create innovative products that enhance healthcare and fitness experiences.
-            
+              At AlignEye, we’re dedicated to enhancing your daily life through innovative technology that supports your health and well-being.
             </p>
           </div>
           
@@ -21,6 +19,12 @@ export default function Footer() {
             <p className="text-gray-600 dark:text-gray-300">Feel free to reach out to us:</p>
             <p className="text-gray-600 dark:text-gray-300">
               Phone: <a href="tel:+919955165091" className="text-teal-700 dark:text-teal-400">+91 9955165091</a>
+            </p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Email: <a href="mailto:aligneye@gmail.com" className="text-teal-700 dark:text-teal-400">aligneye@gmail.com</a>
+            </p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Address: Technology Business Incubator, Block 3, UIET, Panjab University, Chandigarh
             </p>
           </div>
           

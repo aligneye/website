@@ -1,18 +1,34 @@
-import aboutimage from "../assets/WhatsApp Image 2025-04-05 at 01.05.38.jpeg"
+import { useEffect, useState } from "react";
+import aboutimage1 from "../assets/WhatsApp Image 2025-04-05 at 00.58.20.jpeg"; // Replace with your actual images
+import aboutimage2 from "../assets/WhatsApp Image 2025-04-05 at 01.05.38.jpeg";
+import aboutimage3 from "../assets/Untitled design_20250405_020409_0000.jpg";
+
+const images = [aboutimage1, aboutimage2, aboutimage3]; // Array of images
+
 export default function AboutSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup the interval on component unmount
+  }, []);
+
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-          About <span className="text-teal-600 dark:text-teal-400">AlignEye</span>
+          About <span className="text-teal-600 dark:text-teal-400">AlignEye</span> Vision Private Limited
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Company Overview */}
           <div className="flex flex-col justify-center items-start space-y-4">
-            {/* <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mt-5">
               AlignEye Vision Private Limited is a pioneering technology company specializing in motion tracking and eye tracking solutions. We leverage cutting-edge sensor technology and intelligent algorithms to create innovative products that enhance healthcare and fitness experiences.
-            </p> */}
+            </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Our Mission
@@ -57,14 +73,25 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* Image or Illustration */}
-          <div className="flex justify-center items-center">
-            <img 
-              src={aboutimage} // Replace with a relevant image for AlignEye
-              alt="AlignEye Vision" 
-              className="w-full max-w-md rounded-lg shadow-lg hover:scale-105 transition-transform duration-500"
-            />
-            
+          {/* Sliding Images */}
+          <div className="flex justify-center items-center overflow-hidden relative">
+            <div
+              className="flex transition-transform duration-1000 ease-in-out"
+              style={{
+                transform: `translateX(-${activeIndex * 100}%)`,
+                width: `${images.length * 100}%`,
+              }}
+            >
+              {images.map((image, index) => (
+                <div key={index} className="w-full flex-shrink-0">
+                  <img
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg shadow-lg" // Ensure the images are square and cover the container
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
