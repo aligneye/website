@@ -9,8 +9,9 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-teal-700 dark:text-teal-400 mb-4">AlignEye</h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-md">
-              AlignEye is more than just glasses; we redefine how you see the world. 
-              Experience clarity with our finely crafted eyewear that blends style and functionality.
+     
+              AlignEye Vision Private Limited is a pioneering technology company specializing in motion tracking and eye tracking solutions. We leverage cutting-edge sensor technology and intelligent algorithms to create innovative products that enhance healthcare and fitness experiences.
+            
             </p>
           </div>
           
