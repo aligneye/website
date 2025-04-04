@@ -18,10 +18,10 @@ export default function HeroSection() {
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-xl leading-relaxed">
             Discover eyewear that combines style, comfort, and clarity. Experience vision like never before.
           </p>
-          <button className="btn-primary inline-flex items-center space-x-3 text-lg px-10 py-5 rounded-xl">
+          {/* <button className="btn-primary inline-flex items-center space-x-3 text-lg px-10 py-5 rounded-xl">
             <ShoppingBag className="w-6 h-6" />
             <span>Shop Now</span>
-          </button>
+          </button> */}
         </div>
         
         <div className="flex-1 relative">

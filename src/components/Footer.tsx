@@ -14,24 +14,24 @@ export default function Footer() {
             </p>
           </div>
           
+          {/* Contact Us Section */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="/journey" className="footer-link">Journey</a></li>
-              <li><a href="/blogs" className="footer-link">Blogs</a></li>
-              <li><a href="/contact" className="footer-link">Contact Us</a></li>
-              <li><a href="/policy" className="footer-link">Our Policy</a></li>
-            </ul>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact Us</h4>
+            <p className="text-gray-600 dark:text-gray-300">Feel free to reach out to us:</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Phone: <a href="tel:+919955165091" className="text-teal-700 dark:text-teal-400">+91 9955165091</a>
+            </p>
           </div>
           
-          <div>
+          {/* Legal Section (optional) */}
+          {/* <div>
             <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Legal</h4>
             <ul className="space-y-2">
               <li><a href="/terms" className="footer-link">Terms of Use</a></li>
               <li><a href="/privacy" className="footer-link">Privacy Policy</a></li>
               <li><a href="/warranty" className="footer-link">Warranty Policy</a></li>
             </ul>
-          </div>
+          </div> */}
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
@@ -41,10 +41,13 @@ export default function Footer() {
             </p>
             
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="social-link"><Facebook /></a>
-              <a href="#" className="social-link"><Instagram /></a>
-              <a href="#" className="social-link"><Twitter /></a>
-              <a href="#" className="social-link"><Linkedin /></a>
+              {/* Increase the size of the social icons */}
+              <a href="https://www.instagram.com/aligneye/" className="social-link text-3xl">
+                <Instagram className="text-teal-700 dark:text-teal-400" />
+              </a>
+              <a href="https://www.linkedin.com/company/aligneye" className="social-link text-3xl">
+                <Linkedin className="text-teal-700 dark:text-teal-400" />
+              </a>
             </div>
           </div>
         </div>
