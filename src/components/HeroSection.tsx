@@ -13,7 +13,7 @@ export default function HeroSection() {
       navigate("/login");
     } else {
       // If logged in, proceed to pre-book page
-      navigate("/pre-book"); // Update with your pre-book page path
+      navigate("/prebook");
     }
   };
 

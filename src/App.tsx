@@ -1,4 +1,3 @@
-// src/App.tsx
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -9,11 +8,12 @@ import AboutSection from './components/about';
 import Footer from './components/Footer';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import ComingSoonPage from './pages/prebook'; // Import the Coming Soon page
 
 function Layout() {
   const location = useLocation();
   const { user, logout } = useAuth();
-  const hideFooter = location.pathname === "/login" || location.pathname === "/signup";
+  const hideFooter = location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/prebook"  ;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -29,6 +29,7 @@ function Layout() {
           } />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/prebook" element={<ComingSoonPage />} /> {/* New Route for Coming Soon Page */}
         </Routes>
       </main>
       {!hideFooter && <Footer />}
