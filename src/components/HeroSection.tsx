@@ -1,9 +1,24 @@
 import { ShoppingBag } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // Import the useAuth hook to check the user
 import aligneye from "../assets/WhatsApp Image 2025-04-05 at 00.58.20.jpeg";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
+  const { user } = useAuth(); // Get user from context
+
+  const handlePreBookClick = () => {
+    if (!user) {
+      // If not logged in, redirect to login page
+      navigate("/login");
+    } else {
+      // If logged in, proceed to pre-book page
+      navigate("/pre-book"); // Update with your pre-book page path
+    }
+  };
+
   return (
-    <div className="relative min-h-screen flex items-center ">
+    <div className="relative min-h-screen flex items-center">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAiIHkxPSIwIiB4Mj0iMjAwIiB5Mj0iMjAwIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMkE4QjhCIiBzdG9wLW9wYWNpdHk9IjAuMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJBOEI4QiIgc3RvcC1vcGFjaXR5PSIwLjA1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZ3JhZCkiLz48L3N2Zz4=')] opacity-30 dark:opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-br from-teal-50/80 via-white/40 to-white/80 dark:from-gray-900/90 dark:via-gray-800/50 dark:to-gray-900/90 transition-colors duration-300" />
       
@@ -18,10 +33,10 @@ export default function HeroSection() {
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300  max-w-xl leading-relaxed">
             Transforming healthcare and fitness through intelligent motion and eye tracking systems.
           </p>
-          {/* <button className="btn-primary inline-flex items-center space-x-3 text-lg px-10 py-5 rounded-xl">
+          <button onClick={handlePreBookClick} className="btn-primary inline-flex items-center space-x-3 text-lg px-10 py-5 mt-10 rounded-xl">
             <ShoppingBag className="w-6 h-6" />
-            <span>Shop Now</span>
-          </button> */}
+            <span>PRE-BOOK NOW</span>
+          </button>
         </div>
         
         <div className="flex-1 relative">
